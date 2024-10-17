@@ -67,7 +67,7 @@ jobs:
 
     - name: Build mplayer
       run: |
-        ./configure
+        chmod +x configure && ./configure
         make -j42069
       working-directory:  mplayer-ce/mplayer
 
