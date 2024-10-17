@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@master
       with:
         repository: freetype/freetype
-        path: libfreetype
+        path: freetype
     
     - name: Checkout mplayer-ce
       uses: actions/checkout@master
@@ -71,14 +71,14 @@ jobs:
       run: make ogc-install -j42069
       working-directory: libfat
 
-    - name: Build libfreetype
+    - name: Build freetype
       run: |
         cd /opt/devkitpro/cmake
-        cmake -S /__w/mplayer-ce/mplayer-ce/libfreetype -B /__w/mplayer-ce/mplayer-ce/libfreetype/ppcout -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/cmake/GameCube.cmake
-        cd /__w/mplayer-ce/mplayer-ce/libfreetype/ppcout
+        cmake -S /__w/mplayer-ce/mplayer-ce/freetype -B /__w/mplayer-ce/mplayer-ce/freetype/ppcout -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/cmake/GameCube.cmake
+        cd /__w/mplayer-ce/mplayer-ce/freetype/ppcout
         make -j42069
         make install
-      working-directory: libfreetype
+      working-directory: freetype
 
     - name: Build mplayer
       run: |
