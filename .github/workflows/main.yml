@@ -45,6 +45,18 @@ jobs:
         repository: extremscorner/libfat
         path: libfat
 
+    - name: Checkout devkitrice
+      uses: actions/checkout@main
+      with:
+        repository: extremscorner/libogc-rice
+        path: libogc-rice
+
+    - name: Export DEVKITRICE
+      uses: myci-actions/export-env-var@1
+      with:
+        name: DEVKITRICE
+        value: libogc-rice
+
     - name: Build libogc2
       run: make install
       working-directory: libogc
