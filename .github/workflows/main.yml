@@ -72,7 +72,7 @@ jobs:
       working-directory: libfat
 
     - name: Build libfreetype
-      run: make install -j42069
+      run: make -j42069
       working-directory: libfreetype
 
     - name: Build mplayer
