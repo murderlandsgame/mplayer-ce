@@ -22,7 +22,7 @@
 #include "config.h"
 
 #ifdef CONFIG_FREETYPE
-#include <ft2build.h>
+#include <freetype2/ft2build.h>
 #include FT_FREETYPE_H
 #endif
 
