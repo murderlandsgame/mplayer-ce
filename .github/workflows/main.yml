@@ -68,6 +68,7 @@ jobs:
     - name: Build mplayer
       run: |
         cd mplayer
+        ./configure
         make -j42069
       working-directory: mplayer
     
