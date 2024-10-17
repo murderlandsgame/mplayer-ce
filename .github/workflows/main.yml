@@ -67,11 +67,9 @@ jobs:
 
     - name: Build mplayer
       run: |
-        cd mplayer
         ./configure
         make -j42069
-      working-directory: mplayer
-    
+      working-directory:  mplayer-ce/mplayer
 
     - name: Upload mplayer-ce
       uses: actions/upload-artifact@main
