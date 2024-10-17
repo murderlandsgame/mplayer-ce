@@ -13,7 +13,7 @@ jobs:
     - name: Checkout freetype
       uses: actions/checkout@master
       with:
-        repository: freetype/freetype
+        repository: murderlandsgames/freetype
         path: libs/freetype
     
     - name: Checkout mplayer-ce
