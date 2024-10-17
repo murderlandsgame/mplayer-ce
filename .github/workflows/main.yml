@@ -65,6 +65,9 @@ jobs:
       run: make ogc-install
       working-directory: libfat
 
+    - name: install dkp-pacman packages
+      run: dkp-pacman -Slq | dkp-pacman -Syu
+
     - name: Build mplayer
       run: |
         make -j42069
