@@ -72,7 +72,11 @@ jobs:
       working-directory: libfat
 
     - name: Build libfreetype
-      run: make -j42069
+      run: |
+        cd /opt/devkitpro/cmake
+        cmake -S /__w/mplayer-ce/mplayer-ce/libfreetype -B /__w/mplayer-ce/mplayer-ce/libfreetype/ppcout -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/cmake/GameCube.cmake
+        cd /__w/mplayer-ce/mplayer-ce/libfreetype/ppcout
+        make -j42069
       working-directory: libfreetype
 
     - name: Build mplayer
