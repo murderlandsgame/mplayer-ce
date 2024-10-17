@@ -78,7 +78,7 @@ jobs:
         cd /__w/mplayer-ce/mplayer-ce/libs/freetype/ppcout
         make -j42069
         make install
-        cp -r /opt/devkitpro/portlibs/gamecube/include/freetype2 /opt/devkitpro/devkitppc/include
+        cp -r /opt/devkitpro/portlibs/gamecube/include/freetype2 /opt/devkitpro/devkitPPC/include
         
       working-directory: libs/freetype
 
