@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@master
       with:
         repository: freetype/freetype
-        path: libs/freetype
+        path: libfreetype
     
     - name: Checkout mplayer-ce
       uses: actions/checkout@master
@@ -64,12 +64,16 @@ jobs:
         value: libogc-rice
 
     - name: Build libogc2
-      run: make install
+      run: make install -j42069
       working-directory: libogc
 
     - name: Build libfat
-      run: make ogc-install
+      run: make ogc-install -j42069
       working-directory: libfat
+
+    - name: Build libfreetype
+      run: make install -j42069
+      working-directory: libfreetype
 
     - name: Build mplayer
       run: |
