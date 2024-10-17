@@ -13,8 +13,8 @@ jobs:
     - name: Checkout freetype
       uses: actions/checkout@master
       with:
-        repository: murderlandsgame/freetype
-        path: freetype
+        repository: freetype/freetype
+        path: libs/freetype
     
     - name: Checkout mplayer-ce
       uses: actions/checkout@master
@@ -74,12 +74,11 @@ jobs:
     - name: Build freetype
       run: |
         cd /opt/devkitpro/cmake
-        cmake -S /__w/mplayer-ce/mplayer-ce/freetype -B /__w/mplayer-ce/mplayer-ce/freetype/ppcout -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/cmake/GameCube.cmake
-        cd /__w/mplayer-ce/mplayer-ce/freetype/ppcout
+        cmake -S /__w/mplayer-ce/mplayer-ce/libs/freetype -B /__w/mplayer-ce/mplayer-ce/libs/freetype/ppcout -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/cmake/GameCube.cmake
+        cd /__w/mplayer-ce/mplayer-ce/libs/freetype/ppcout
         make -j42069
         make install
-        cp -r /opt/devkitpro/portlibs/gamecube/include/freetype2/freetype /opt/devkitpro/portlibs/gamecube/include
-      working-directory: freetype
+      working-directory: libs/freetype
 
     - name: Build mplayer
       run: |
