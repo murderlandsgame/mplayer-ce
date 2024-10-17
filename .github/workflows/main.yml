@@ -77,6 +77,7 @@ jobs:
         cmake -S /__w/mplayer-ce/mplayer-ce/libfreetype -B /__w/mplayer-ce/mplayer-ce/libfreetype/ppcout -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/cmake/GameCube.cmake
         cd /__w/mplayer-ce/mplayer-ce/libfreetype/ppcout
         make -j42069
+        make install
       working-directory: libfreetype
 
     - name: Build mplayer
