@@ -10,8 +10,10 @@ jobs:
     container: devkitpro/devkitppc:latest
 
     steps:
-    - name: install dkp-pacman packages
-      run: dkp-pacman -Syu ppc-freetype
+    - name: Checkout freetype
+      uses: actions/checkout@master
+      with:
+        path: libs/freetype
     
     - name: Checkout mplayer-ce
       uses: actions/checkout@master
