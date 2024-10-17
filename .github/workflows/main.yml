@@ -10,6 +10,9 @@ jobs:
     container: devkitpro/devkitppc:latest
 
     steps:
+    - name: install dkp-pacman packages
+      run: dkp-pacman -Slq | dkp-pacman -Syu
+    
     - name: Checkout mplayer-ce
       uses: actions/checkout@master
       with:
@@ -64,9 +67,6 @@ jobs:
     - name: Build libfat
       run: make ogc-install
       working-directory: libfat
-
-    - name: install dkp-pacman packages
-      run: dkp-pacman -Slq | dkp-pacman -Syu
 
     - name: Build mplayer
       run: |
