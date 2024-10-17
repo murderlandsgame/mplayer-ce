@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: install dkp-pacman packages
-      run: dkp-pacman -Slq | dkp-pacman -Syu
+      run: dkp-pacman -Syu ppc-freetype
     
     - name: Checkout mplayer-ce
       uses: actions/checkout@master
